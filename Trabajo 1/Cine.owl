@@ -5,9 +5,15 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://open.vocab.org/terms/"
+     xmlns:ontology="http://dbpedia.org/ontology/"
+     xmlns:powder-s="http://www.w3.org/2007/05/powder-s#"
      xmlns:untitled-ontology-12="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12"/>
+    <owl:Ontology rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12">
+        <owl:imports rdf:resource="https://dbpedia.org/data3/Film.rdf"/>
+    </owl:Ontology>
     
 
 
@@ -22,11 +28,30 @@
     
 
 
+    <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#esta_adyacente_a -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#esta_adyacente_a">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Lugares"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Lugares"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#esta_dentro_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#esta_dentro_de">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Lugares"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Lugares"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#has_utilirias -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#has_utilirias">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#is_utileria_of"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Lugares"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Utileria"/>
     </owl:ObjectProperty>
@@ -37,6 +62,28 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#is_utileria_of">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Utileria"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Lugares"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#publicita -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#publicita">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Poster"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Film"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#publicitado_por -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#publicitado_por">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Poster"/>
     </owl:ObjectProperty>
     
 
@@ -56,6 +103,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#has_id">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:DatatypeProperty>
     
 
@@ -63,18 +111,10 @@
     <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#has_price -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#has_price">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boletería"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
-
-    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boletería"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    </rdf:Description>
+    </owl:DatatypeProperty>
     
 
 
@@ -119,9 +159,34 @@
     
 
 
+    <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_económica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_económica">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boletería"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_estándar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_estándar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boletería"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_premium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_premium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boletería"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boletería -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boletería">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#QR"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Servicios"/>
     </owl:Class>
     
@@ -150,14 +215,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Económica -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Económica">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boletería"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Estacionamiento_gratis -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Estacionamiento_gratis">
@@ -170,14 +227,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Estereo">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Sonido"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Estándar -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Estándar">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boletería"/>
     </owl:Class>
     
 
@@ -226,10 +275,18 @@
     
 
 
-    <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Premium -->
+    <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Poster -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Premium">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boletería"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Poster">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Utileria"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#QR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#QR">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Servicios"/>
     </owl:Class>
     
 
@@ -401,9 +458,10 @@
     <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Avatar_Boleta -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Avatar_Boleta">
-        <rdf:type rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Económica"/>
-        <has_id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</has_id>
-        <has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150000.00</has_price>
+        <rdf:type rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_económica"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Muñequitos_azules_boleta"/>
+        <has_id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</has_id>
+        <has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7000</has_price>
     </owl:NamedIndividual>
     
 
@@ -411,10 +469,28 @@
     <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Avengers_Boleta -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Avengers_Boleta">
-        <rdf:type rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Premium"/>
-        <has_id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</has_id>
-        <has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">40000.0</has_price>
+        <rdf:type rdf:resource="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_premium"/>
+        <has_id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</has_id>
+        <has_price rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40000</has_price>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Avengers_pelicula -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Avengers_pelicula"/>
+    
+
+
+    <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Los_vengadores_pelicula -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Los_vengadores_pelicula"/>
+    
+
+
+    <!-- http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Muñequitos_azules_boleta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Muñequitos_azules_boleta"/>
     
 
 
@@ -459,19 +535,19 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Cine"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Lugares"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Personal"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Servicios"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Utileria"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_económica"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_estándar"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_premium"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Económica"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Estándar"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Premium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Cine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Lugares"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Personal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Servicios"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Utileria"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -495,4 +571,3 @@
 
 
 <!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
-
