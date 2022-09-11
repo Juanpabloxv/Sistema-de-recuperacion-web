@@ -1,0 +1,654 @@
+@prefix : <http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix terms: <http://open.vocab.org/terms/> .
+@prefix ontology: <http://dbpedia.org/ontology/> .
+@prefix powder-s: <http://www.w3.org/2007/05/powder-s#> .
+@prefix untitled-ontology-12: <http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#> .
+@base <http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12> .
+
+<http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://dbpedia.org/ontology/afdbId
+ontology:afdbId rdf:type owl:AnnotationProperty ;
+                rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/allcinemaId
+ontology:allcinemaId rdf:type owl:AnnotationProperty ;
+                     rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/amgid
+ontology:amgid rdf:type owl:AnnotationProperty ;
+               rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/bgafdId
+ontology:bgafdId rdf:type owl:AnnotationProperty ;
+                 rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/cinematography
+ontology:cinematography rdf:type owl:AnnotationProperty ;
+                        rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/costumeDesigner
+ontology:costumeDesigner rdf:type owl:AnnotationProperty ;
+                         rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/director
+ontology:director rdf:type owl:AnnotationProperty ;
+                  rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/eTeatrId
+ontology:eTeatrId rdf:type owl:AnnotationProperty ;
+                  rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/editing
+ontology:editing rdf:type owl:AnnotationProperty ;
+                 rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/egafdId
+ontology:egafdId rdf:type owl:AnnotationProperty ;
+                 rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/eurobabeIndexId
+ontology:eurobabeIndexId rdf:type owl:AnnotationProperty ;
+                         rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/filmAudioType
+ontology:filmAudioType rdf:type owl:AnnotationProperty ;
+                       rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/filmColourType
+ontology:filmColourType rdf:type owl:AnnotationProperty ;
+                        rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/filmRuntime
+ontology:filmRuntime rdf:type owl:AnnotationProperty ;
+                     rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/firstBroadcast
+ontology:firstBroadcast rdf:type owl:AnnotationProperty ;
+                        rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/gross
+ontology:gross rdf:type owl:AnnotationProperty ;
+               rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/iafdId
+ontology:iafdId rdf:type owl:AnnotationProperty ;
+                rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/idAllocine
+ontology:idAllocine rdf:type owl:AnnotationProperty ;
+                    rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/makeupArtist
+ontology:makeupArtist rdf:type owl:AnnotationProperty ;
+                      rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/producedBy
+ontology:producedBy rdf:type owl:AnnotationProperty ;
+                    rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/quebecerTitle
+ontology:quebecerTitle rdf:type owl:AnnotationProperty ;
+                       rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/setDesigner
+ontology:setDesigner rdf:type owl:AnnotationProperty ;
+                     rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/specialEffects
+ontology:specialEffects rdf:type owl:AnnotationProperty ;
+                        rdfs:domain ontology:Film .
+
+
+###  http://dbpedia.org/ontology/titleLanguage
+ontology:titleLanguage rdf:type owl:AnnotationProperty ;
+                       rdfs:domain ontology:Film .
+
+
+###  http://open.vocab.org/terms/defines
+terms:defines rdf:type owl:AnnotationProperty .
+
+
+###  http://open.vocab.org/terms/describes
+terms:describes rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2007/05/powder-s#describedby
+powder-s:describedby rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#wasDerivedFrom
+prov:wasDerivedFrom rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://dbpedia.org/ontology/closingFilm
+ontology:closingFilm rdf:type owl:ObjectProperty ;
+                     rdfs:range ontology:Film .
+
+
+###  http://dbpedia.org/ontology/film
+ontology:film rdf:type owl:ObjectProperty ;
+              rdfs:range ontology:Film .
+
+
+###  http://dbpedia.org/ontology/filmVersion
+ontology:filmVersion rdf:type owl:ObjectProperty ;
+                     rdfs:range ontology:Film .
+
+
+###  http://dbpedia.org/ontology/movie
+ontology:movie rdf:type owl:ObjectProperty ;
+               rdfs:range ontology:Film .
+
+
+###  http://dbpedia.org/ontology/openingFilm
+ontology:openingFilm rdf:type owl:ObjectProperty ;
+                     rdfs:range ontology:Film .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#esta_adyacente_a
+untitled-ontology-12:esta_adyacente_a rdf:type owl:ObjectProperty ,
+                                               owl:SymmetricProperty ;
+                                      rdfs:domain untitled-ontology-12:Lugares ;
+                                      rdfs:range untitled-ontology-12:Lugares .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#esta_dentro_de
+untitled-ontology-12:esta_dentro_de rdf:type owl:ObjectProperty ,
+                                             owl:TransitiveProperty ;
+                                    rdfs:domain untitled-ontology-12:Lugares ;
+                                    rdfs:range untitled-ontology-12:Lugares .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#has_utilirias
+untitled-ontology-12:has_utilirias rdf:type owl:ObjectProperty ;
+                                   owl:inverseOf untitled-ontology-12:is_utileria_of ;
+                                   rdfs:domain untitled-ontology-12:Lugares ;
+                                   rdfs:range untitled-ontology-12:Utileria .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#incluye_asiento
+untitled-ontology-12:incluye_asiento rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#is_utileria_of
+untitled-ontology-12:is_utileria_of rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                    rdfs:domain untitled-ontology-12:Utileria ;
+                                    rdfs:range untitled-ontology-12:Lugares .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#publicita
+untitled-ontology-12:publicita rdf:type owl:ObjectProperty ,
+                                        owl:FunctionalProperty ;
+                               rdfs:domain untitled-ontology-12:Poster ;
+                               rdfs:range ontology:Film .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#publicitado_por
+untitled-ontology-12:publicitado_por rdf:type owl:ObjectProperty ,
+                                              owl:InverseFunctionalProperty ;
+                                     rdfs:domain ontology:Film ;
+                                     rdfs:range untitled-ontology-12:Poster .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#has_id
+untitled-ontology-12:has_id rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf owl:topDataProperty ;
+                            rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#has_price
+untitled-ontology-12:has_price rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf owl:topDataProperty ;
+                               rdfs:domain untitled-ontology-12:Boletería ;
+                               rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#tiene_comodidad
+untitled-ontology-12:tiene_comodidad rdf:type owl:DatatypeProperty ;
+                                     rdfs:subPropertyOf owl:topDataProperty ;
+                                     rdfs:domain untitled-ontology-12:Asiento ;
+                                     rdfs:range xsd:boolean .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dbpedia.org/ontology/Film
+ontology:Film rdf:type owl:Class ;
+              owl:equivalentClass <http://schema.org/Movie> ,
+                                  <http://www.wikidata.org/entity/Q11424> ;
+              rdfs:subClassOf ontology:Work .
+
+
+###  http://dbpedia.org/ontology/Work
+ontology:Work rdf:type owl:Class .
+
+
+###  http://schema.org/Movie
+<http://schema.org/Movie> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Asiento
+untitled-ontology-12:Asiento rdf:type owl:Class ;
+                             rdfs:subClassOf untitled-ontology-12:Utileria .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Asiento_Basico
+untitled-ontology-12:Asiento_Basico rdf:type owl:Class ;
+                                    rdfs:subClassOf untitled-ontology-12:Asiento .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Asiento_Comodo
+untitled-ontology-12:Asiento_Comodo rdf:type owl:Class ;
+                                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                          owl:onProperty untitled-ontology-12:tiene_comodidad ;
+                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onDataRange xsd:boolean
+                                                        ] ;
+                                    rdfs:subClassOf untitled-ontology-12:Asiento .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Baño_Gratis
+untitled-ontology-12:Baño_Gratis rdf:type owl:Class ;
+                                 rdfs:subClassOf untitled-ontology-12:Servicios .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Baños
+untitled-ontology-12:Baños rdf:type owl:Class ;
+                           rdfs:subClassOf untitled-ontology-12:Lugares ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty untitled-ontology-12:has_utilirias ;
+                                             owl:someValuesFrom untitled-ontology-12:Inodoros
+                                           ] .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_económica
+untitled-ontology-12:Boleta_económica rdf:type owl:Class ;
+                                      rdfs:subClassOf untitled-ontology-12:Boletería ,
+                                                      [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                               owl:complementOf untitled-ontology-12:Boleta_estándar
+                                                                             ]
+                                                                             [ rdf:type owl:Class ;
+                                                                               owl:complementOf untitled-ontology-12:Boleta_premium
+                                                                             ]
+                                                                           ) ;
+                                                        rdf:type owl:Class
+                                                      ] .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_estándar
+untitled-ontology-12:Boleta_estándar rdf:type owl:Class ;
+                                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                           owl:onProperty untitled-ontology-12:incluye_asiento ;
+                                                           owl:someValuesFrom untitled-ontology-12:Asiento_Comodo
+                                                         ] ;
+                                     rdfs:subClassOf untitled-ontology-12:Boletería .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_premium
+untitled-ontology-12:Boleta_premium rdf:type owl:Class ;
+                                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                          owl:onProperty untitled-ontology-12:incluye_asiento ;
+                                                          owl:allValuesFrom untitled-ontology-12:Asiento_Comodo
+                                                        ] ;
+                                    rdfs:subClassOf untitled-ontology-12:Boletería .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boletería
+untitled-ontology-12:Boletería rdf:type owl:Class ;
+                               owl:equivalentClass untitled-ontology-12:QR ;
+                               rdfs:subClassOf untitled-ontology-12:Servicios .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Cine
+untitled-ontology-12:Cine rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Combos_de_comida
+untitled-ontology-12:Combos_de_comida rdf:type owl:Class ;
+                                      rdfs:subClassOf untitled-ontology-12:Servicios .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Dolby_Atmos
+untitled-ontology-12:Dolby_Atmos rdf:type owl:Class ;
+                                 rdfs:subClassOf untitled-ontology-12:Sonido ;
+                                 owl:disjointWith untitled-ontology-12:Estereo .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Estacionamiento_gratis
+untitled-ontology-12:Estacionamiento_gratis rdf:type owl:Class ;
+                                            rdfs:subClassOf untitled-ontology-12:Servicios .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Estereo
+untitled-ontology-12:Estereo rdf:type owl:Class ;
+                             rdfs:subClassOf untitled-ontology-12:Sonido .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Inodoros
+untitled-ontology-12:Inodoros rdf:type owl:Class ;
+                              rdfs:subClassOf untitled-ontology-12:Utileria .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Lugares
+untitled-ontology-12:Lugares rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Mesa
+untitled-ontology-12:Mesa rdf:type owl:Class ;
+                          rdfs:subClassOf untitled-ontology-12:Utileria .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Pantalla
+untitled-ontology-12:Pantalla rdf:type owl:Class ;
+                              rdfs:subClassOf untitled-ontology-12:Utileria .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Parqueadero
+untitled-ontology-12:Parqueadero rdf:type owl:Class ;
+                                 rdfs:subClassOf untitled-ontology-12:Lugares .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Personal
+untitled-ontology-12:Personal rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Poster
+untitled-ontology-12:Poster rdf:type owl:Class ;
+                            rdfs:subClassOf untitled-ontology-12:Utileria .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#QR
+untitled-ontology-12:QR rdf:type owl:Class ;
+                        rdfs:subClassOf untitled-ontology-12:Servicios .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Salas
+untitled-ontology-12:Salas rdf:type owl:Class ;
+                           rdfs:subClassOf untitled-ontology-12:Lugares ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty untitled-ontology-12:has_utilirias ;
+                                             owl:someValuesFrom untitled-ontology-12:Asiento
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty untitled-ontology-12:has_utilirias ;
+                                             owl:someValuesFrom untitled-ontology-12:Pantalla
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty untitled-ontology-12:has_utilirias ;
+                                             owl:someValuesFrom untitled-ontology-12:Sonido
+                                           ] .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Servicios
+untitled-ontology-12:Servicios rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Sonido
+untitled-ontology-12:Sonido rdf:type owl:Class ;
+                            rdfs:subClassOf untitled-ontology-12:Utileria .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Taquilla
+untitled-ontology-12:Taquilla rdf:type owl:Class ;
+                              rdfs:subClassOf untitled-ontology-12:Lugares .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Utileria
+untitled-ontology-12:Utileria rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#VR
+untitled-ontology-12:VR rdf:type owl:Class ;
+                        rdfs:subClassOf untitled-ontology-12:Pantalla .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Zona_de_comida
+untitled-ontology-12:Zona_de_comida rdf:type owl:Class ;
+                                    rdfs:subClassOf untitled-ontology-12:Lugares ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty untitled-ontology-12:has_utilirias ;
+                                                      owl:someValuesFrom untitled-ontology-12:Asiento
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty untitled-ontology-12:has_utilirias ;
+                                                      owl:someValuesFrom untitled-ontology-12:Mesa
+                                                    ] .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Zona_de_espera
+untitled-ontology-12:Zona_de_espera rdf:type owl:Class ;
+                                    rdfs:subClassOf untitled-ontology-12:Lugares ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty untitled-ontology-12:has_utilirias ;
+                                                      owl:someValuesFrom untitled-ontology-12:Asiento
+                                                    ] .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#clientes
+untitled-ontology-12:clientes rdf:type owl:Class ;
+                              rdfs:subClassOf untitled-ontology-12:Personal ;
+                              owl:disjointWith untitled-ontology-12:empleados .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#empleados
+untitled-ontology-12:empleados rdf:type owl:Class ;
+                               rdfs:subClassOf untitled-ontology-12:Personal .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#limpiadores
+untitled-ontology-12:limpiadores rdf:type owl:Class ;
+                                 rdfs:subClassOf untitled-ontology-12:empleados .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#porteros
+untitled-ontology-12:porteros rdf:type owl:Class ;
+                              rdfs:subClassOf untitled-ontology-12:empleados .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#vendedores
+untitled-ontology-12:vendedores rdf:type owl:Class ;
+                                rdfs:subClassOf untitled-ontology-12:empleados .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#2D
+<http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#2D> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf untitled-ontology-12:Pantalla .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#3D
+<http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#3D> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf untitled-ontology-12:Pantalla .
+
+
+###  http://www.wikidata.org/entity/Q11424
+<http://www.wikidata.org/entity/Q11424> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://dbpedia.org/ontology/Film
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Avatar_Boleta
+untitled-ontology-12:Avatar_Boleta rdf:type owl:NamedIndividual ,
+                                            untitled-ontology-12:Boleta_económica ;
+                                   owl:sameAs untitled-ontology-12:Muñequitos_azules_boleta ;
+                                   untitled-ontology-12:has_id 1 ;
+                                   untitled-ontology-12:has_price 7000 .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Avengers_Boleta
+untitled-ontology-12:Avengers_Boleta rdf:type owl:NamedIndividual ,
+                                              untitled-ontology-12:Boleta_premium ;
+                                     untitled-ontology-12:has_id 2 ;
+                                     untitled-ontology-12:has_price 40000 .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Avengers_pelicula
+untitled-ontology-12:Avengers_pelicula rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_prueba
+untitled-ontology-12:Boleta_prueba rdf:type owl:NamedIndividual ,
+                                            [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                     owl:complementOf untitled-ontology-12:Boleta_estándar
+                                                                   ]
+                                                                   [ rdf:type owl:Class ;
+                                                                     owl:complementOf untitled-ontology-12:Boleta_premium
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Los_vengadores_pelicula
+untitled-ontology-12:Los_vengadores_pelicula rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Muñequitos_azules_boleta
+untitled-ontology-12:Muñequitos_azules_boleta rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+ontology: terms:defines ontology:Film .
+
+
+ontology:Film rdfs:label "film"@fr ,
+                         "movie"@en ,
+                         "فلم"@ur ;
+              rdfs:isDefinedBy ontology: ;
+              rdfs:label "scannán"@ga ;
+              prov:wasDerivedFrom <http://mappings.dbpedia.org/index.php/OntologyClass:Film> ;
+              rdfs:label "film"@pl ,
+                         "ταινία"@el ,
+                         "film"@da ,
+                         "film"@nl ,
+                         "영화"@ko ,
+                         "Film"@de ,
+                         "映画"@ja ,
+                         "فيلم"@ar ;
+              powder-s:describedby <http://dbpedia.org/ontology/data/definitions.ttl> ;
+              rdfs:label "película"@es .
+
+
+<http://dbpedia.org/ontology/data/definitions.ttl> terms:describes ontology:Film .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( untitled-ontology-12:Asiento
+                untitled-ontology-12:Inodoros
+                untitled-ontology-12:Mesa
+                untitled-ontology-12:Pantalla
+                untitled-ontology-12:Sonido
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( untitled-ontology-12:Baño_Gratis
+                untitled-ontology-12:Boletería
+                untitled-ontology-12:Combos_de_comida
+                untitled-ontology-12:Estacionamiento_gratis
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( untitled-ontology-12:Baños
+                untitled-ontology-12:Parqueadero
+                untitled-ontology-12:Salas
+                untitled-ontology-12:Taquilla
+                untitled-ontology-12:Zona_de_comida
+                untitled-ontology-12:Zona_de_espera
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( untitled-ontology-12:Boleta_económica
+                untitled-ontology-12:Boleta_estándar
+                untitled-ontology-12:Boleta_premium
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( untitled-ontology-12:Cine
+                untitled-ontology-12:Lugares
+                untitled-ontology-12:Personal
+                untitled-ontology-12:Servicios
+                untitled-ontology-12:Utileria
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( untitled-ontology-12:VR
+                <http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#2D>
+                <http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#3D>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( untitled-ontology-12:limpiadores
+                untitled-ontology-12:porteros
+                untitled-ontology-12:vendedores
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
