@@ -242,7 +242,7 @@ untitled-ontology-12:tiene_utileria rdf:type owl:ObjectProperty ;
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#tiene_comodidad
 untitled-ontology-12:tiene_comodidad rdf:type owl:DatatypeProperty ;
                                      rdfs:subPropertyOf owl:topDataProperty ;
-                                     rdfs:domain untitled-ontology-12:Asiento ;
+                                     rdfs:domain untitled-ontology-12:Puesto ;
                                      rdfs:range xsd:boolean .
 
 
@@ -287,25 +287,19 @@ ontology:Work rdf:type owl:Class .
 <http://schema.org/Movie> rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Asiento
-untitled-ontology-12:Asiento rdf:type owl:Class ;
-                             rdfs:subClassOf untitled-ontology-12:Lugares ,
-                                             untitled-ontology-12:Servicio .
-
-
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Asiento_Basico
 untitled-ontology-12:Asiento_Basico rdf:type owl:Class ;
-                                    rdfs:subClassOf untitled-ontology-12:Asiento .
+                                    rdfs:subClassOf untitled-ontology-12:Puesto .
 
 
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Asiento_Comodo
 untitled-ontology-12:Asiento_Comodo rdf:type owl:Class ;
-                                    rdfs:subClassOf untitled-ontology-12:Asiento .
+                                    rdfs:subClassOf untitled-ontology-12:Puesto .
 
 
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Asiento_Reclinable
 untitled-ontology-12:Asiento_Reclinable rdf:type owl:Class ;
-                                        rdfs:subClassOf untitled-ontology-12:Asiento .
+                                        rdfs:subClassOf untitled-ontology-12:Puesto .
 
 
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Baño_Gratis
@@ -321,32 +315,6 @@ untitled-ontology-12:Baños rdf:type owl:Class ;
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta
 untitled-ontology-12:Boleta rdf:type owl:Class ;
                             owl:equivalentClass untitled-ontology-12:QR .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_Avatar
-untitled-ontology-12:Boleta_Avatar rdf:type owl:Class ;
-                                   rdfs:subClassOf untitled-ontology-12:Named_boletas ,
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty untitled-ontology-12:incluye ;
-                                                     owl:someValuesFrom untitled-ontology-12:Asiento_Basico
-                                                   ] ,
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty untitled-ontology-12:incluye ;
-                                                     owl:someValuesFrom untitled-ontology-12:Estereo
-                                                   ] ,
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty untitled-ontology-12:incluye ;
-                                                     owl:someValuesFrom <http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#2D>
-                                                   ] .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_Gratis
-untitled-ontology-12:Boleta_Gratis rdf:type owl:Class ;
-                                   owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                         owl:onProperty untitled-ontology-12:tiene_precio ;
-                                                         owl:allValuesFrom xsd:int
-                                                       ] ;
-                                   rdfs:subClassOf untitled-ontology-12:Boleta .
 
 
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_Invalida
@@ -470,11 +438,6 @@ untitled-ontology-12:Mesa rdf:type owl:Class ;
                           rdfs:subClassOf untitled-ontology-12:Utileria .
 
 
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Named_boletas
-untitled-ontology-12:Named_boletas rdf:type owl:Class ;
-                                   rdfs:subClassOf untitled-ontology-12:Boleta .
-
-
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Pantalla
 untitled-ontology-12:Pantalla rdf:type owl:Class ;
                               rdfs:subClassOf untitled-ontology-12:Servicio .
@@ -492,6 +455,12 @@ untitled-ontology-12:Personal rdf:type owl:Class .
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Poster
 untitled-ontology-12:Poster rdf:type owl:Class ;
                             rdfs:subClassOf untitled-ontology-12:Utileria .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Puesto
+untitled-ontology-12:Puesto rdf:type owl:Class ;
+                            rdfs:subClassOf untitled-ontology-12:Lugares ,
+                                            untitled-ontology-12:Servicio .
 
 
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#QR
@@ -538,6 +507,11 @@ untitled-ontology-12:Zona_de_espera rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#clientes
 untitled-ontology-12:clientes rdf:type owl:Class ;
+                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                    owl:onProperty untitled-ontology-12:compra ;
+                                                    owl:maxQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                    owl:onClass untitled-ontology-12:Boleta
+                                                  ] ;
                               rdfs:subClassOf untitled-ontology-12:Personal .
 
 
@@ -626,6 +600,10 @@ untitled-ontology-12:Baño1 rdf:type owl:NamedIndividual ,
                                     untitled-ontology-12:Baños .
 
 
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_1
+untitled-ontology-12:Boleta_1 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_prueba
 untitled-ontology-12:Boleta_prueba rdf:type owl:NamedIndividual ,
                                             [ owl:intersectionOf ( [ rdf:type owl:Class ;
@@ -641,6 +619,11 @@ untitled-ontology-12:Boleta_prueba rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Cine_Colombia
 untitled-ontology-12:Cine_Colombia rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Freddy
+untitled-ontology-12:Freddy rdf:type owl:NamedIndividual ;
+                            untitled-ontology-12:compra untitled-ontology-12:Avatar_Boleta .
 
 
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Los_vengadores_pelicula
@@ -694,19 +677,19 @@ ontology: terms:defines ontology:Film .
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( untitled-ontology-12:Asiento
-                untitled-ontology-12:Inodoros
-                untitled-ontology-12:Mesa
-                untitled-ontology-12:Pantalla
-                untitled-ontology-12:Sonido
+  owl:members ( untitled-ontology-12:Boleta_económica
+                untitled-ontology-12:Boleta_estándar
+                untitled-ontology-12:Boleta_premium
               )
 ] .
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( untitled-ontology-12:Boleta_económica
-                untitled-ontology-12:Boleta_estándar
-                untitled-ontology-12:Boleta_premium
+  owl:members ( untitled-ontology-12:Inodoros
+                untitled-ontology-12:Mesa
+                untitled-ontology-12:Pantalla
+                untitled-ontology-12:Puesto
+                untitled-ontology-12:Sonido
               )
 ] .
 
