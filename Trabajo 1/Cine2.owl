@@ -38,6 +38,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#es_incluido_en -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#es_incluido_en">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#incluye"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#esta_adyacente_a -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#esta_adyacente_a">
@@ -55,6 +63,23 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Lugar"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Lugar"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#incluye -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#incluye">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta_Economica"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta_Estandar"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta_Premium"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Servicio"/>
     </owl:ObjectProperty>
     
 
@@ -149,7 +174,17 @@
     <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta_Economica -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta_Economica">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#incluye"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Basico"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -157,7 +192,17 @@
     <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta_Estandar -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta_Estandar">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#incluye"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Comodo"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -165,7 +210,17 @@
     <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta_Premium -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta_Premium">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#incluye"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Reclinable"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -389,6 +444,30 @@
     
 
 
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Estandar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Estandar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Comodo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_premium1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_premium1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Reclinable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_premium2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_premium2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Reclinable"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta2 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta2">
@@ -405,10 +484,26 @@
     
 
 
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta_premium -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta_premium">
+        <incluye rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_premium1"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleto1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleto1">
         <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleto_estandar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleto_estandar">
+        <incluye rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Estandar"/>
     </owl:NamedIndividual>
     
 
