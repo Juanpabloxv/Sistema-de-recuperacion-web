@@ -229,6 +229,21 @@ untitled-ontology-12:publicitado_por rdf:type owl:ObjectProperty ,
                                      rdfs:range untitled-ontology-12:Poster .
 
 
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#tener_un_amigo
+untitled-ontology-12:tener_un_amigo rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#tener_un_enemigo
+untitled-ontology-12:tener_un_enemigo rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf untitled-ontology-12:tiene_un_enemigo .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#tiene_un_enemigo
+untitled-ontology-12:tiene_un_enemigo rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf untitled-ontology-12:tener_un_amigo .
+
+
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#tiene_utileria
 untitled-ontology-12:tiene_utileria rdf:type owl:ObjectProperty ;
                                     rdfs:domain untitled-ontology-12:Lugares ;
@@ -317,24 +332,23 @@ untitled-ontology-12:Boleta rdf:type owl:Class ;
                             owl:equivalentClass untitled-ontology-12:QR .
 
 
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_Invalida
-untitled-ontology-12:Boleta_Invalida rdf:type owl:Class .
-
-
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_económica
 untitled-ontology-12:Boleta_económica rdf:type owl:Class ;
                                       owl:equivalentClass [ owl:intersectionOf ( untitled-ontology-12:Boleta
                                                                                  [ rdf:type owl:Restriction ;
                                                                                    owl:onProperty untitled-ontology-12:incluye ;
-                                                                                   owl:someValuesFrom untitled-ontology-12:Asiento_Basico
+                                                                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                   owl:onClass untitled-ontology-12:Asiento_Basico
                                                                                  ]
                                                                                  [ rdf:type owl:Restriction ;
                                                                                    owl:onProperty untitled-ontology-12:incluye ;
-                                                                                   owl:someValuesFrom untitled-ontology-12:Estereo
+                                                                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                   owl:onClass untitled-ontology-12:Estereo
                                                                                  ]
                                                                                  [ rdf:type owl:Restriction ;
                                                                                    owl:onProperty untitled-ontology-12:incluye ;
-                                                                                   owl:someValuesFrom <http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#2D>
+                                                                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                   owl:onClass <http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#2D>
                                                                                  ]
                                                                                ) ;
                                                             rdf:type owl:Class
@@ -368,6 +382,14 @@ untitled-ontology-12:Boleta_estándar rdf:type owl:Class ;
                                                            rdf:type owl:Class
                                                          ] ;
                                      rdfs:subClassOf untitled-ontology-12:Boleta .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_no_economica
+untitled-ontology-12:Boleta_no_economica rdf:type owl:Class ;
+                                         owl:equivalentClass [ rdf:type owl:Class ;
+                                                               owl:complementOf untitled-ontology-12:Boleta_económica
+                                                             ] ;
+                                         rdfs:subClassOf untitled-ontology-12:Boleta .
 
 
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_premium
@@ -507,10 +529,12 @@ untitled-ontology-12:Zona_de_espera rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#clientes
 untitled-ontology-12:clientes rdf:type owl:Class ;
-                              owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                    owl:onProperty untitled-ontology-12:compra ;
-                                                    owl:maxQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                                    owl:onClass untitled-ontology-12:Boleta
+                              owl:equivalentClass [ owl:intersectionOf ( untitled-ontology-12:Personal
+                                                                         [ rdf:type owl:Class ;
+                                                                           owl:complementOf untitled-ontology-12:empleados
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
                                                   ] ;
                               rdfs:subClassOf untitled-ontology-12:Personal .
 
@@ -553,113 +577,35 @@ untitled-ontology-12:vendedores rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Asiento1
-untitled-ontology-12:Asiento1 rdf:type owl:NamedIndividual ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty untitled-ontology-12:esta_adyacente_a ;
-                                         owl:hasValue untitled-ontology-12:Baño1
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Asiento_basico
+untitled-ontology-12:Asiento_basico rdf:type owl:NamedIndividual ,
+                                             untitled-ontology-12:Asiento_Basico .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_economica
+untitled-ontology-12:Boleta_economica rdf:type owl:NamedIndividual ,
+                                               untitled-ontology-12:Boleta ;
+                                      untitled-ontology-12:incluye untitled-ontology-12:Asiento_basico ,
+                                                                   untitled-ontology-12:Pantalla_2d ,
+                                                                   untitled-ontology-12:Sonido_Estereo .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Pantalla_2d
+untitled-ontology-12:Pantalla_2d rdf:type owl:NamedIndividual ,
+                                          <http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#2D> .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Persona1
+untitled-ontology-12:Persona1 rdf:type owl:NamedIndividual ,
+                                       untitled-ontology-12:Personal ,
+                                       [ rdf:type owl:Class ;
+                                         owl:complementOf untitled-ontology-12:empleados
                                        ] .
 
 
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Asiento_JK
-untitled-ontology-12:Asiento_JK rdf:type owl:NamedIndividual ;
-                                untitled-ontology-12:esta_dentro_de untitled-ontology-12:Sala_A1 .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Avatar_Boleta
-untitled-ontology-12:Avatar_Boleta rdf:type owl:NamedIndividual ,
-                                            untitled-ontology-12:Boleta_económica ;
-                                   owl:sameAs untitled-ontology-12:Muñequitos_azules_boleta .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Avatar_Pelicula
-untitled-ontology-12:Avatar_Pelicula rdf:type owl:NamedIndividual ,
-                                              ontology:Film ;
-                                     untitled-ontology-12:publicitado_por untitled-ontology-12:Avatar_Poster .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Avatar_Poster
-untitled-ontology-12:Avatar_Poster rdf:type owl:NamedIndividual ,
-                                            untitled-ontology-12:Poster ;
-                                   untitled-ontology-12:publicita untitled-ontology-12:Avatar_Pelicula ,
-                                                                  untitled-ontology-12:Muñequitos_Azules_Pelicula .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Avengers_Boleta
-untitled-ontology-12:Avengers_Boleta rdf:type owl:NamedIndividual ,
-                                              untitled-ontology-12:Boleta_premium .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Avengers_pelicula
-untitled-ontology-12:Avengers_pelicula rdf:type owl:NamedIndividual ,
-                                                ontology:Film .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Baño1
-untitled-ontology-12:Baño1 rdf:type owl:NamedIndividual ,
-                                    untitled-ontology-12:Baños .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_1
-untitled-ontology-12:Boleta_1 rdf:type owl:NamedIndividual .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Boleta_prueba
-untitled-ontology-12:Boleta_prueba rdf:type owl:NamedIndividual ,
-                                            [ owl:intersectionOf ( [ rdf:type owl:Class ;
-                                                                     owl:complementOf untitled-ontology-12:Boleta_estándar
-                                                                   ]
-                                                                   [ rdf:type owl:Class ;
-                                                                     owl:complementOf untitled-ontology-12:Boleta_premium
-                                                                   ]
-                                                                 ) ;
-                                              rdf:type owl:Class
-                                            ] .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Cine_Colombia
-untitled-ontology-12:Cine_Colombia rdf:type owl:NamedIndividual .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Freddy
-untitled-ontology-12:Freddy rdf:type owl:NamedIndividual ;
-                            untitled-ontology-12:compra untitled-ontology-12:Avatar_Boleta .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Los_vengadores_pelicula
-untitled-ontology-12:Los_vengadores_pelicula rdf:type owl:NamedIndividual ,
-                                                      ontology:Film .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Muñequitos_Azules_Pelicula
-untitled-ontology-12:Muñequitos_Azules_Pelicula rdf:type owl:NamedIndividual ,
-                                                         ontology:Film ;
-                                                untitled-ontology-12:publicitado_por untitled-ontology-12:Avatar_Poster .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Muñequitos_azules_boleta
-untitled-ontology-12:Muñequitos_azules_boleta rdf:type owl:NamedIndividual .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Sala_A1
-untitled-ontology-12:Sala_A1 rdf:type owl:NamedIndividual ;
-                             untitled-ontology-12:esta_dentro_de untitled-ontology-12:Cine_Colombia .
-
-
-###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#boleta1
-untitled-ontology-12:boleta1 rdf:type owl:NamedIndividual ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty untitled-ontology-12:incluye ;
-                                        owl:someValuesFrom untitled-ontology-12:Asiento_Reclinable
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty untitled-ontology-12:incluye ;
-                                        owl:someValuesFrom untitled-ontology-12:Estereo
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty untitled-ontology-12:incluye ;
-                                        owl:someValuesFrom <http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#2D>
-                                      ] .
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Sonido_Estereo
+untitled-ontology-12:Sonido_Estereo rdf:type owl:NamedIndividual ,
+                                             untitled-ontology-12:Estereo .
 
 
 #################################################################
