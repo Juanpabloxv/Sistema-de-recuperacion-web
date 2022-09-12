@@ -236,7 +236,9 @@ untitled-ontology-12:tener_un_amigo rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#tener_un_enemigo
 untitled-ontology-12:tener_un_enemigo rdf:type owl:ObjectProperty ;
-                                      rdfs:subPropertyOf untitled-ontology-12:tiene_un_enemigo .
+                                      rdfs:subPropertyOf untitled-ontology-12:tiene_un_enemigo ;
+                                      owl:propertyChainAxiom ( untitled-ontology-12:tener_un_amigo
+                                                             ) .
 
 
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#tiene_un_enemigo
@@ -432,6 +434,13 @@ untitled-ontology-12:Combos_de_comida rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Envolvente
 untitled-ontology-12:Envolvente rdf:type owl:Class ;
+                                owl:equivalentClass [ owl:intersectionOf ( untitled-ontology-12:Sonido
+                                                                           [ rdf:type owl:Class ;
+                                                                             owl:complementOf untitled-ontology-12:Estereo
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ] ;
                                 rdfs:subClassOf untitled-ontology-12:Sonido ;
                                 owl:disjointWith untitled-ontology-12:Estereo .
 
@@ -606,6 +615,10 @@ untitled-ontology-12:Persona1 rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#Sonido_Estereo
 untitled-ontology-12:Sonido_Estereo rdf:type owl:NamedIndividual ,
                                              untitled-ontology-12:Estereo .
+
+
+###  http://www.semanticweb.org/frorozcol/ontologies/2022/8/untitled-ontology-12#sonido_envolvente
+untitled-ontology-12:sonido_envolvente rdf:type owl:NamedIndividual .
 
 
 #################################################################
