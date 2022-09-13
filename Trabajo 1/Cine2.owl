@@ -119,6 +119,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Basico">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Servicio"/>
+        <rdfs:comment>Está incluido solo en la boleta económica</rdfs:comment>
     </owl:Class>
     
 
@@ -127,6 +128,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Comodo">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Servicio"/>
+        <rdfs:comment>Está incluido solo en la boleta estandar</rdfs:comment>
     </owl:Class>
     
 
@@ -135,6 +137,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Lugar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Lugar"/>
+        <rdfs:comment>Son los asiento en la sala de cine</rdfs:comment>
     </owl:Class>
     
 
@@ -143,6 +146,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Reclinable">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Servicio"/>
+        <rdfs:comment>Está incluido solo en la boleta Premium</rdfs:comment>
     </owl:Class>
     
 
@@ -151,6 +155,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Servicio">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Servicio"/>
+        <rdfs:comment>Depende del tipo de la boleta</rdfs:comment>
     </owl:Class>
     
 
@@ -159,6 +164,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Baño">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Lugar"/>
+        <rdfs:comment>Son los baño en el cine</rdfs:comment>
     </owl:Class>
     
 
@@ -167,6 +173,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta">
         <owl:equivalentClass rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#QR"/>
+        <rdfs:comment>Tambien es conocido como tiquete. Objecto con el que se puede ingresar a una sala de cine. Tiene el tipo de asiento y la pelicula que va a ver</rdfs:comment>
     </owl:Class>
     
 
@@ -185,6 +192,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:comment>Es el tipo de boleta que tiene solo tiene un asiento básico.</rdfs:comment>
     </owl:Class>
     
 
@@ -203,6 +211,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:comment>Es el tipo de boleta que tiene solo tiene un asiento cómodo</rdfs:comment>
     </owl:Class>
     
 
@@ -221,6 +230,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:comment>Es el tipo de boleta que tiene solo tiene un asiento reclinable.</rdfs:comment>
     </owl:Class>
     
 
@@ -229,6 +239,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Cine">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Lugar"/>
+        <rdfs:comment>El cine es lugar donde hay muchas salas</rdfs:comment>
     </owl:Class>
     
 
@@ -253,6 +264,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:comment>Son las personas que compran boletas</rdfs:comment>
     </owl:Class>
     
 
@@ -272,6 +284,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:comment>Es la persona que compra mínimo 3 boletas</rdfs:comment>
     </owl:Class>
     
 
@@ -280,6 +293,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Empleado">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Personal"/>
+        <rdfs:comment>Es el que vende las boletas</rdfs:comment>
     </owl:Class>
     
 
@@ -289,6 +303,7 @@
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Envolvente">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sonido"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estereo"/>
+        <rdfs:comment>Formato de la pelicula</rdfs:comment>
     </owl:Class>
     
 
@@ -297,6 +312,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estacionamiento_Gratis">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Servicio"/>
+        <rdfs:comment>Servicio se ortorga a  las boletas Premiun</rdfs:comment>
     </owl:Class>
     
 
@@ -305,21 +321,16 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estereo">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sonido"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Limpiador -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Limpiador">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Empleado"/>
+        <rdfs:comment>Formato de la pelicula</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Lugar -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Lugar"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Lugar">
+        <rdfs:comment>Representación de la ubicación física de in objecto</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -327,6 +338,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Servicio"/>
+        <rdfs:comment>Formato de la pelicula</rdfs:comment>
     </owl:Class>
     
 
@@ -335,6 +347,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Parqueadero">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Lugar"/>
+        <rdfs:comment>Lugar al lado del cine</rdfs:comment>
     </owl:Class>
     
 
@@ -347,14 +360,8 @@
 
     <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Personal -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Personal"/>
-    
-
-
-    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Portero -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Portero">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Empleado"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Personal">
+        <rdfs:comment>Objecto que hace referencia a las personas</rdfs:comment>
     </owl:Class>
     
 
@@ -369,7 +376,9 @@
 
     <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#QR -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#QR"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#QR">
+        <rdfs:comment>Es una boleta pero digital</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -377,13 +386,16 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sala">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Lugar"/>
+        <rdfs:comment>Las salas son los lugares donde hay asientos, pantallas y sonido</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Servicio -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Servicio"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Servicio">
+        <rdfs:comment>Es un objecto que es incluido e una boleta</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -391,6 +403,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sonido">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Servicio"/>
+        <rdfs:comment>Formato de la pelicula</rdfs:comment>
     </owl:Class>
     
 
@@ -405,14 +418,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#VR">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Vendedor -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Vendedor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Empleado"/>
+        <rdfs:comment>Formato de la pelicula</rdfs:comment>
     </owl:Class>
     
 
@@ -421,6 +427,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#2D">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla"/>
+        <rdfs:comment>Formato de la pelicula</rdfs:comment>
     </owl:Class>
     
 
@@ -429,6 +436,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#3D">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla"/>
+        <rdfs:comment>Formato de la pelicula</rdfs:comment>
     </owl:Class>
     
 
@@ -523,6 +531,12 @@
         <compra rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta3"/>
         <compra rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleto1"/>
     </owl:NamedIndividual>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NegativePropertyAssertion"/>
+        <owl:sourceIndividual rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Personal1"/>
+        <owl:assertionProperty rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#compra"/>
+        <owl:targetIndividual rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta_premium"/>
+    </rdf:Description>
     
 
 
@@ -537,6 +551,20 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#movie_chavo">
         <publicitado_por rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Poster"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Poster">
+        <rdfs:comment>Elemento con el que se publicita la película</rdfs:comment>
+    </rdf:Description>
     
 
 
@@ -561,7 +589,6 @@
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Lugar"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Baño"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Cine"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Parqueadero"/>
         </owl:members>
     </rdf:Description>
@@ -572,6 +599,22 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estacionamiento_Gratis"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sonido"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Baño"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Cine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Parqueadero"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Baño"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Parqueadero"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sala"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -598,14 +641,6 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Cliente"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Cliente_Mayorista"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Empleado"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Limpiador"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Portero"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Vendedor"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
