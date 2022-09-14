@@ -486,10 +486,35 @@
     
 
 
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estacionamiento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estacionamiento">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Servicio"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estacionamiento_Gratis -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estacionamiento_Gratis">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Servicio"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estacionamiento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estacionamiento_de_Cobro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estacionamiento_de_Cobro">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estacionamiento"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estacionamiento_Gratis"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -797,7 +822,7 @@
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Servicio"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Combos_de_Comidas"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estacionamiento_Gratis"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estacionamiento"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sonido"/>
         </owl:members>
