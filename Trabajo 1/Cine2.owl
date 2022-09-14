@@ -371,7 +371,7 @@
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Personal"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Persona"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#compra"/>
                         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
@@ -390,7 +390,7 @@
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Personal"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Persona"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#compra"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
@@ -555,9 +555,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Personal -->
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Persona -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Personal"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Persona"/>
     
 
 
@@ -638,85 +638,131 @@
     
 
 
-    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Basico -->
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#asiento_basico -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Basico">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#asiento_basico">
         <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Basico"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_comodo -->
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#asiento_lugar -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_comodo">
-        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Comodo"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#asiento_lugar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Lugar"/>
+        <esta_dentro_de rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#sala"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_reclinable -->
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#baño -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_reclinable">
-        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Reclinable"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#baño">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Baño"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta1 -->
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#boleta_economica -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta1">
-        <incluye rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_comodo"/>
-        <incluye rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sonido_envolvente"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#boleta_economica">
+        <incluye rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#asiento_basico"/>
+        <incluye rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#pantalla_2d"/>
+        <incluye rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#sonido_estereo"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta2 -->
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#cine -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta2">
-        <incluye rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Basico"/>
-        <incluye rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla_2D"/>
-        <incluye rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sonido_Estereo"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#cine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Cine"/>
+        <esta_adyacente_a rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#baño"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla_2D -->
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#pantalla_2d -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla_2D">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#pantalla_2d">
         <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#2D"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla_2d_2 -->
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#pelicula_a_todo_gas -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla_2d_2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#2D"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#pelicula_a_todo_gas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pelicula"/>
+        <publicitado_por rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#poster_2"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla_3D -->
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#pelicula_los_vengadores -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla_3D">
-        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#3D"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#pelicula_los_vengadores">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pelicula"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sonido_Estereo -->
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#pelicula_rapido_y_furioso -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sonido_Estereo">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#pelicula_rapido_y_furioso">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pelicula"/>
+        <publicitado_por rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#poster_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#pelicula_the_avengers -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#pelicula_the_avengers">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pelicula"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#persona_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#persona_1">
+        <compra rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#boleta_economica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#poster_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#poster_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Poster"/>
+        <publicita rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#pelicula_los_vengadores"/>
+        <publicita rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#pelicula_the_avengers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#poster_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#poster_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Poster"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#sala -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#sala">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sala"/>
+        <esta_dentro_de rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#cine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#sonido_estereo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#sonido_estereo">
         <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estereo"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sonido_envolvente -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sonido_envolvente">
-        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Envolvente"/>
     </owl:NamedIndividual>
     
 
@@ -761,7 +807,7 @@
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Boleta"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Lugar"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Personal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Persona"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Servicio"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Utileria"/>
         </owl:members>
@@ -781,43 +827,6 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#2D"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#3D"/>
         </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
-        <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Basico"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_comodo"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_reclinable"/>
-        </owl:distinctMembers>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
-        <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_Basico"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Asiento_reclinable"/>
-        </owl:distinctMembers>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
-        <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla_2D"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla_2d_2"/>
-        </owl:distinctMembers>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
-        <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla_2D"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla_2d_2"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Pantalla_3D"/>
-        </owl:distinctMembers>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
-        <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sonido_Estereo"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Sonido_envolvente"/>
-        </owl:distinctMembers>
     </rdf:Description>
 </rdf:RDF>
 
