@@ -5,9 +5,15 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://open.vocab.org/terms/"
+     xmlns:ontology="http://dbpedia.org/ontology/"
+     xmlns:powder-s="http://www.w3.org/2007/05/powder-s#"
      xmlns:untitled-ontology-15="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15"/>
+    <owl:Ontology rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15">
+        <owl:imports rdf:resource="https://dbpedia.org/data3/Film.rdf"/>
+    </owl:Ontology>
     
 
 
@@ -387,6 +393,10 @@
                             </owl:Restriction>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#incluye"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estacionamiento_Gratis"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#incluye"/>
                                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#VR"/>
                             </owl:Restriction>
                         </owl:intersectionOf>
@@ -587,6 +597,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Gaseosa">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Comidas"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Palomitas"/>
         <rdfs:comment>Bebida refrescante, efervescente y sin alcohol.</rdfs:comment>
     </owl:Class>
     
@@ -603,16 +614,7 @@
     <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Palomitas -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Palomitas">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Comidas"/>
-                    <owl:Class>
-                        <owl:complementOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Gaseosa"/>
-                    </owl:Class>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Comidas"/>
         <rdfs:comment>Roseta de maíz tostado y reventado</rdfs:comment>
     </owl:Class>
     
@@ -824,6 +826,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#boleta_premiun">
         <incluye rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#asiento_reclinable"/>
+        <incluye rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#estacionamiento_gratis"/>
         <incluye rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#pantalla_VR"/>
         <incluye rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#sonido_envolvente_2"/>
     </owl:NamedIndividual>
@@ -835,6 +838,71 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#cine">
         <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Cine"/>
         <esta_adyacente_a rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#baño"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#combo_gaseosa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#combo_gaseosa">
+        <trae rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_gaseosa_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#combo_mixto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#combo_mixto">
+        <trae rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_gaseosa_2"/>
+        <trae rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_palomitas_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#combo_palomitas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#combo_palomitas">
+        <trae rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_palomitas_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_gaseosa_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_gaseosa_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Gaseosa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_gaseosa_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_gaseosa_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Gaseosa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_palomitas_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_palomitas_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Palomitas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_palomitas_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_palomitas_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Palomitas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#estacionamiento_gratis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#estacionamiento_gratis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#Estacionamiento_Gratis"/>
     </owl:NamedIndividual>
     
 
@@ -1058,6 +1126,20 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#2D"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#3D"/>
         </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_gaseosa_1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_gaseosa_2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_palomitas_1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/pablo/ontologies/2022/8/untitled-ontology-15#comida_palomitas_2"/>
+        </owl:distinctMembers>
     </rdf:Description>
 </rdf:RDF>
 
