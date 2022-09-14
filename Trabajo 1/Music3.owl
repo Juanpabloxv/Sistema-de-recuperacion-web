@@ -1,0 +1,314 @@
+@prefix : <http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9> .
+
+<http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Is_Influence_Of
+:Is_Influence_Of rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 owl:inverseOf :has_Influence .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#has_Album
+:has_Album rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :is_Album_Of ;
+           rdf:type owl:FunctionalProperty .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#has_Cancion
+:has_Cancion rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :is_Cancion ;
+             rdfs:domain :Album ;
+             rdfs:range :Cancion .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#has_Genre
+:has_Genre rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :has_Cancion ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Cancion ;
+           rdfs:range :Genero .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#has_Influence
+:has_Influence rdf:type owl:ObjectProperty ,
+                        owl:TransitiveProperty ;
+               rdfs:domain :Artista ;
+               rdfs:range :Artista ;
+               owl:propertyChainAxiom ( :has_Same_GrupoMusical
+                                        :has_Influence
+                                      ) .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#has_Same_GrupoMusical
+:has_Same_GrupoMusical rdf:type owl:ObjectProperty ,
+                                owl:SymmetricProperty ;
+                       rdfs:domain :Artista ;
+                       rdfs:range :Artista .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#has_instrument
+:has_instrument rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :has_Cancion ;
+                rdfs:domain :Cancion ;
+                rdfs:range :Instrumento .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#is_Album_Of
+:is_Album_Of rdf:type owl:ObjectProperty ,
+                      owl:InverseFunctionalProperty .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#is_Cancion
+:is_Cancion rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Cancion ;
+            rdfs:range :Album .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#is_Genre_Of
+:is_Genre_Of rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :is_Cancion .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#is_GrupoMusical_Of
+:is_GrupoMusical_Of rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#is_instrument_Of
+:is_instrument_Of rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :is_Cancion .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Album
+:Album rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :has_Cancion ;
+                             owl:minQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Cancion
+                           ] ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :has_Cancion ;
+                         owl:maxQualifiedCardinality "10"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Artista
+                       ] ;
+       rdfs:label "Disco o conjunto de discos sonoros, de larga duración." .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Artista
+:Artista rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Ballad
+:Ballad rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Rock
+                                                   [ rdf:type owl:Class ;
+                                                     owl:complementOf :Hard
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:subClassOf :Rock ;
+        owl:disjointWith :Hard .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Cancion
+:Cancion rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :is_Cancion ;
+                               owl:someValuesFrom :Album
+                             ] ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :has_Genre ;
+                           owl:someValuesFrom :Genero
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :has_instrument ;
+                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Instrumento
+                         ] .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Clasica
+:Clasica rdf:type owl:Class ;
+         rdfs:subClassOf :Genero .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#EDM
+:EDM rdf:type owl:Class ;
+     rdfs:subClassOf :Electronica ;
+     owl:disjointWith :Techno .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Electronica
+:Electronica rdf:type owl:Class ;
+             rdfs:subClassOf :Genero ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :has_instrument ;
+                               owl:someValuesFrom :Inst_artificiales
+                             ] .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Genero
+:Genero rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Grupo_Musical
+:Grupo_Musical rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty :is_GrupoMusical_Of ;
+                                 owl:maxQualifiedCardinality "10"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Artista
+                               ] .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Hard
+:Hard rdf:type owl:Class ;
+      rdfs:subClassOf :Rock ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :has_instrument ;
+                        owl:allValuesFrom [ owl:intersectionOf ( :Inst_de_cuerda
+                                                                 :Inst_de_percusion
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ]
+                      ] .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Inst_artificiales
+:Inst_artificiales rdf:type owl:Class ;
+                   rdfs:subClassOf :Instrumento .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Inst_de_cuerda
+:Inst_de_cuerda rdf:type owl:Class ;
+                rdfs:subClassOf :Instrumento .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Inst_de_percusion
+:Inst_de_percusion rdf:type owl:Class ;
+                   rdfs:subClassOf :Instrumento .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Inst_de_viento
+:Inst_de_viento rdf:type owl:Class ;
+                rdfs:subClassOf :Instrumento .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Instrumento
+:Instrumento rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Parrandera
+:Parrandera rdf:type owl:Class ;
+            rdfs:subClassOf :Genero ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :has_instrument ;
+                              owl:someValuesFrom :Inst_de_percusion
+                            ] .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Reggaeton
+:Reggaeton rdf:type owl:Class ;
+           rdfs:subClassOf :Genero ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :has_instrument ;
+                             owl:allValuesFrom [ owl:intersectionOf ( :Inst_artificiales
+                                                                      :Inst_de_percusion
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ]
+                           ] .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Rock
+:Rock rdf:type owl:Class ;
+      rdfs:subClassOf :Genero .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Techno
+:Techno rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Electronica
+                                                   [ rdf:type owl:Class ;
+                                                     owl:complementOf :EDM
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:subClassOf :Electronica .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Feid
+:Feid rdf:type owl:NamedIndividual ,
+               :Artista ;
+      owl:sameAs :Salomon_Villada_Hoyos .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Salomon_Villada_Hoyos
+:Salomon_Villada_Hoyos rdf:type owl:NamedIndividual ,
+                                :Artista .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Saul_Hudson
+:Saul_Hudson rdf:type owl:NamedIndividual ,
+                      :Artista ;
+             owl:sameAs :Slash .
+
+
+###  http://www.semanticweb.org/daniel/ontologies/2022/8/untitled-ontology-9#Slash
+:Slash rdf:type owl:NamedIndividual ,
+                :Artista .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Clasica
+                :Electronica
+                :Parrandera
+                :Reggaeton
+                :Rock
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Genero
+                :Grupo_Musical
+                :Instrumento
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Inst_artificiales
+                :Inst_de_cuerda
+                :Inst_de_percusion
+                :Inst_de_viento
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
